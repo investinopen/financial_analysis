@@ -67,7 +67,7 @@ dataall <- df_list %>% reduce(full_join, by='ORG_EIN')
 # Ratio 1. Days cash on hand
 dataall$ratio1 <- dataall$F9_10_ASSET_CASH_EOY/(dataall$F9_09_EXP_TOT_TOT/365)
 
-# Ratio 2. Leverage ratio WORKED!
+# Ratio 2. Leverage ratio WORKED
 dataall$ratio2 <-dataall$F9_10_LIAB_TOT_EOY/dataall$F9_10_ASSET_TOT_EOY
 
 # Ratio 3. Reliance on a revenue source ratio WORKED! 
