@@ -2,7 +2,9 @@
 library (dplyr)
 library (tidyverse)
 
-###Calculations 2010
+###SYNTAX FOR 2010 STARTS
+
+##Calculations for year start
 
 #a)Revenue calculations
 
@@ -21,10 +23,10 @@ data$revse <- data$F9_08_REV_OTH_FUNDR_NET_TOT + data$F9_08_REV_OTH_GAMING_NET_T
 #Create Other revenue
 data$revother <-data$F9_08_REV_OTH_ROY_TOT + data$F9_08_REV_MISC_TOT_TOT
 
-#save data
+#Save data
 write.csv(data, "C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with calculations/CRevenue2010.csv", row.names = FALSE)
 
-#delete data
+#Delete data
 rm(data)
 
 #b)Expenses calculations
@@ -35,52 +37,53 @@ data <-read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructur
 #Create personnel expenses
 data$expper <- data$F9_09_EXP_COMP_DTK_TOT + data$F9_09_EXP_COMP_DSQ_PERS_TOT + data$F9_09_EXP_OTH_SAL_WAGE_TOT + data$F9_09_EXP_PENSION_CONTR_TOT + data$F9_09_EXP_OTH_EMPL_BEN_TOT + data$F9_09_EXP_PAYROLL_TAX_TOT
 
-#save data
+#Save data
 write.csv(data, "C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with calculations/CExpenses2010.csv", row.names = FALSE)
 
-#delete data
+#Delete data
 rm(data)
 
-#ends creation of variables
+##Creation of variables ends
 
-#create a dataset with all variables per year
+##Preparation for ratio calculations start
 
+#Create a dataset with all variables for year
 library(tidyverse)
 
-#2010 inputs for the analysis together
+#Put together all inputs for analysis
 data1 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with calculations/CRevenue2010.csv") 
 data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with calculations/CExpenses2010.csv")
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2010.csv")
 
-#only select the varaibles of interest in each dataset
+#Select variables/items of interest in each dataset
 data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
-#merging the three datasets
+#Merge the three datasets with all the variables/items of interest 
 df_list <- list(data1a, data2a, data3a) 
 dataall <- df_list %>% reduce(full_join, by='ORG_EIN')
 
 
-#calculations for ratios
+##Calculations for ratios start
 
 # Ratio 1. Days cash on hand
 dataall$ratio1 <- dataall$F9_10_ASSET_CASH_EOY/(dataall$F9_09_EXP_TOT_TOT/365)
 
-# Ratio 2. Leverage ratio WORKED
+# Ratio 2. Leverage ratio
 dataall$ratio2 <-dataall$F9_10_LIAB_TOT_EOY/dataall$F9_10_ASSET_TOT_EOY
 
-# Ratio 3. Reliance on a revenue source ratio WORKED! 
+# Ratio 3. Reliance on a revenue source ratio 
 dataall$largestrev <- pmax(dataall$revcont, dataall$F9_08_REV_CONTR_GOVT_GRANT, dataall$F9_08_REV_PROG_TOT_TOT, dataall$revinvest, dataall$revse, dataall$F9_08_REV_OTH_INV_NET_TOT, dataall$revother)
 dataall$ratio3 <-dataall$largestrev/dataall$F9_08_REV_TOT_TOT 
 
-# Ratio 4. Government reliance ratio WORKED!
+# Ratio 4. Government reliance ratio
 dataall$ratio4 <-dataall$F9_08_REV_CONTR_GOVT_GRANT/dataall$F9_08_REV_TOT_TOT 
 
-# Ratio 5. Contributions reliance ratio WORKED!
+# Ratio 5. Contributions reliance ratio
 dataall$ratio5 <-dataall$revcont/dataall$F9_08_REV_TOT_TOT 
 
-# Ratio 6. Programme service revenue reliance WORKED!  
+# Ratio 6. Programme service revenue reliance  
 dataall$ratio6 <-dataall$F9_08_REV_PROG_TOT_TOT/dataall$F9_08_REV_TOT_TOT
 
 # Ratio 7. Programme expense ratio 
@@ -92,7 +95,7 @@ dataall$ratio8 <-dataall$F9_09_EXP_TOT_MGMT/dataall$F9_09_EXP_TOT_TOT
 # Ratio 9. Fundraising expense ratio
 dataall$ratio9 <-dataall$F9_09_EXP_TOT_FUNDR/dataall$F9_09_EXP_TOT_TOT
 
-# Ratio 10. Personnel expense ratio WORKED!  
+# Ratio 10. Personnel expense ratio  
 dataall$ratio10 <-dataall$revcont/dataall$F9_08_REV_TOT_TOT
     
 #save table
