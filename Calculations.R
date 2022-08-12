@@ -56,7 +56,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2010.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -165,7 +165,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2011.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -275,7 +275,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2012.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -384,7 +384,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2013.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -493,7 +493,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2014.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -602,7 +602,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2015.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -711,7 +711,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2016.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -820,7 +820,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2017.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -929,7 +929,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2018.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -1038,7 +1038,7 @@ data2 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastruct
 data3 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Filtered cases/FBalance2019.csv")
 
 #Select variables/items of interest in each dataset
-data1a <- data1[,c("ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
+data1a <- data1[,c("RETURN_VERSION", "ORG_EIN", "ORG_NAME_L1", "RETURN_TYPE", "TAX_YEAR", "revcont", "F9_08_REV_CONTR_GOVT_GRANT", "F9_08_REV_PROG_TOT_TOT", "revinvest", "revse", "F9_08_REV_OTH_INV_NET_TOT", "F9_08_REV_OTH_INV_NET_TOT", "revother", "F9_08_REV_TOT_TOT")]
 data2a <- data2[,c("ORG_EIN", "F9_09_EXP_TOT_PROG", "F9_09_EXP_TOT_MGMT", "F9_09_EXP_TOT_FUNDR", "expper", "F9_09_EXP_TOT_TOT")] 
 data3a <- data3[,c("ORG_EIN", "F9_10_ASSET_CASH_EOY", "F9_10_ASSET_TOT_EOY", "F9_10_LIAB_TOT_EOY")]
 
@@ -1093,4 +1093,42 @@ rm(data2a)
 rm(data3a)
 rm(df_list)
 
+#### Calculations ends 
+###
+#creating databases per organization
 
+#open databases per year
+data2010 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2010.csv") 
+data2011 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2011.csv") 
+data2012 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2012.csv") 
+data2013 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2013.csv") 
+data2014 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2014.csv") 
+data2015 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2015.csv") 
+data2016 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2016.csv") 
+data2017 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2017.csv") 
+data2018 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2018.csv") 
+data2019 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2019.csv") 
+
+#separate elements per organization
+dataorg_2010 <- data2010[data2010$ORG_EIN == '941156476',]
+dataorg_2011 <- data2011[data2011$ORG_EIN == '941156476',]
+dataorg_2012 <- data2012[data2012$ORG_EIN == '941156476',]
+dataorg_2013 <- data2013[data2013$ORG_EIN == '941156476',]
+dataorg_2014 <- data2014[data2014$ORG_EIN == '941156476',]
+dataorg_2015 <- data2015[data2015$ORG_EIN == '941156476',]
+dataorg_2016 <- data2016[data2016$ORG_EIN == '941156476',]
+dataorg_2017 <- data2017[data2017$ORG_EIN == '941156476',]
+dataorg_2018 <- data2018[data2018$ORG_EIN == '941156476',]
+dataorg_2019 <- data2019[data2019$ORG_EIN == '941156476',]
+
+#merge the 10 rows per each year in a single dataset: https://r-lang.com/rbind-in-r/#:~:text=To%20merge%20two%20data%20frames,()%20stands%20for%20row%20binding. 
+combinedDf <- rbind(dataorg_2010, dataorg_2011, dataorg_2012, dataorg_2013, dataorg_2014, dataorg_2015, dataorg_2016, dataorg_2017, dataorg_2018, dataorg_2019)
+
+#save table
+write.csv(combinedDf,"C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization/941156476.csv", row.names = FALSE)
+
+#Transpose the table, #note the number 5 is for the column 5"year" that serves as a header
+data_t <- setNames(data.frame(t(combinedDf[ , - 5])), combinedDf[ , 5])
+
+#save transposed table NOTE, ROW NAMES CHANGED TO TRUE!!!!
+write.csv(data_t,"C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/941156476.csv", row.names = TRUE)
