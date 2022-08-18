@@ -1132,3 +1132,13 @@ data_t <- setNames(data.frame(t(combinedDf[ , - 5])), combinedDf[ , 5])
 
 #save transposed table NOTE, ROW NAMES CHANGED TO TRUE!!!!
 write.csv(data_t,"C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/941156476.csv", row.names = TRUE)
+
+# pivot form for the database
+subset <- select(combinedDf, ORG_EIN, TAX_YEAR,ratio1, ratio2, ratio3, ratio4, ratio5, ratio6, ratio7, ratio8, ratio9, ratio10)
+database_form <- subset %>% 
+     tidyr::pivot_longer(cols = starts_with("ratio"), 
+         names_to = "Measure", 
+         values_to = "Value", 
+         names_prefix = "ratio_")
+
+write.csv(data_t,"C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/database_form.csv", row.names = TRUE)
