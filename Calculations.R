@@ -2205,23 +2205,29 @@ data2017 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastr
 data2018 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2018.csv") 
 data2019 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2019.csv") 
 
-#separate elements per organization
-dataorg_2010 <- data2010[data2010$ORG_EIN == '941156476',]
-dataorg_2011 <- data2011[data2011$ORG_EIN == '941156476',]
-dataorg_2012 <- data2012[data2012$ORG_EIN == '941156476',]
-dataorg_2013 <- data2013[data2013$ORG_EIN == '941156476',]
-dataorg_2014 <- data2014[data2014$ORG_EIN == '941156476',]
-dataorg_2015 <- data2015[data2015$ORG_EIN == '941156476',]
-dataorg_2016 <- data2016[data2016$ORG_EIN == '941156476',]
-dataorg_2017 <- data2017[data2017$ORG_EIN == '941156476',]
-dataorg_2018 <- data2018[data2018$ORG_EIN == '941156476',]
-dataorg_2019 <- data2019[data2019$ORG_EIN == '941156476',]
+# #separate elements per organization
+# dataorg_2010 <- 
+# dataorg_2011 <- 
+# dataorg_2012 <- 
+# dataorg_2013 <- 
+# dataorg_2014 <- 
+# dataorg_2015 <- 
+# dataorg_2016 <- 
+# dataorg_2017 <- 
+# dataorg_2018 <- 
+# dataorg_2019 <- 
 
-#merge the 10 rows per each year in a single dataset: https://r-lang.com/rbind-in-r/#:~:text=To%20merge%20two%20data%20frames,()%20stands%20for%20row%20binding. 
-combinedDf <- rbind(dataorg_2010, dataorg_2011, dataorg_2012, dataorg_2013, dataorg_2014, dataorg_2015, dataorg_2016, dataorg_2017, dataorg_2018, dataorg_2019)
+# #merge the 10 rows per each year in a single dataset: https://r-lang.com/rbind-in-r/#:~:text=To%20merge%20two%20data%20frames,()%20stands%20for%20row%20binding. 
+# combinedDf <- rbind(dataorg_2010, dataorg_2011, dataorg_2012, dataorg_2013, dataorg_2014, dataorg_2015, dataorg_2016, dataorg_2017, dataorg_2018, dataorg_2019)
+
+# do this with a for loop (https://www.geeksforgeeks.org/for-loop-in-r/)
+# You'll need to:
+# + create a list of EINs
+# + for loop to go through the list using a variable temporarily holding the EIN value
+# + pass the EIN variable to the filename as well as the ORG_EIN filters
 
 #merge
-#combinedDf <- rbind(data2010($ORG_EIN == '941156476',
+combinedDf <- rbind(data2010[data2010$ORG_EIN == '941156476',],data2011[data2011$ORG_EIN == '941156476',],data2012[data2012$ORG_EIN == '941156476',],data2013[data2013$ORG_EIN == '941156476',],data2014[data2014$ORG_EIN == '941156476',],data2015[data2015$ORG_EIN == '941156476',],data2016[data2016$ORG_EIN == '941156476',],data2017[data2017$ORG_EIN == '941156476',],data2018[data2018$ORG_EIN == '941156476',],data2019[data2019$ORG_EIN == '941156476',]
 
 
 #save table
