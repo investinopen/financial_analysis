@@ -2190,7 +2190,7 @@ rm(ratio2019)
 
 ########################################
 
-###creating databases per organization
+###creating databases per organization (Note I am still working on this!!!)
 
 #open databases per year
 
