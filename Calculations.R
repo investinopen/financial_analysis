@@ -2220,10 +2220,12 @@ rm(combinedDf, data_t, data2010, data2011, data2012, data2013, data2014, data201
 
 
 
-### Syntax trying to systematize the process using a loops
+### Syntax for creation of databases per organization
 
+library(stringr)
 
 #Step 1. create a list of EINs
+
 EIN <- c('521447747',
   '260389639',
   '231365979',	
@@ -2243,9 +2245,7 @@ EIN <- c('521447747',
   '814921243',	
   '814396672')
 
-#Open the Loop
-for (i in EIN) {
-#a) Open the databases per year
+#Step 2.Open the databases per year
   data2010 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2010.csv") 
   data2011 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2011.csv") 
   data2012 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2012.csv") 
@@ -2256,34 +2256,24 @@ for (i in EIN) {
   data2017 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2017.csv") 
   data2018 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2018.csv") 
   data2019 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2019.csv") 
-  
-#b)Select the elements of interest
+
+#Step 3.Use the loop to create the 18 databases corresponding to each organization under study
+for (i in EIN) {
+#3.1)Select the elements of interest
   combinedDf <- rbind(data2010[data2010$ORG_EIN == i,],data2011[data2011$ORG_EIN == i,],data2012[data2012$ORG_EIN == i,],data2013[data2013$ORG_EIN == i,],data2014[data2014$ORG_EIN == i,],data2015[data2015$ORG_EIN == i,],data2016[data2016$ORG_EIN == i,],data2017[data2017$ORG_EIN == i,],data2018[data2018$ORG_EIN == i,],data2019[data2019$ORG_EIN == i,])
-  
-#c)Transpose the table, #note the number 5 (in the line below) is for the column 5 "year" that serves as a header
+#3.2)Transpose the table, #note the number 5 (in the line below) is for the column 5 "year" that serves as a header
   data_t <- setNames(data.frame(t(combinedDf[ , - 5])), combinedDf[ , 5])
-  write.csv(data_t,"C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/'i'.csv", row.names = TRUE)
-#d)Delete the databases no longer in use
-  rm(combinedDf, data_t, data2010, data2011, data2012, data2013, data2014, data2015, data2016, data2017, data2018, data2019)  
-      }
+#3.3)Write the database using a string
+  write.csv(data_t,(str_interp("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/${i}.csv")))
+  }
+#Step 4. Delete the temporary databases and elements
+rm(EIN, i, combinedDf, data_t, data2010, data2011, data2012, data2013, data2014, data2015, data2016, data2017, data2018, data2019)
+  
+#End of the syntax for creation of databases per organization   
 
 
-
-
-### End of the Loop
-
-
-
-
-#Works well merge dataset!
-combinedDf <- rbind(data2010[data2010$ORG_EIN == '941156476',],data2011[data2011$ORG_EIN == '941156476',],data2012[data2012$ORG_EIN == '941156476',],data2013[data2013$ORG_EIN == '941156476',],data2014[data2014$ORG_EIN == '941156476',],data2015[data2015$ORG_EIN == '941156476',],data2016[data2016$ORG_EIN == '941156476',],data2017[data2017$ORG_EIN == '941156476',],data2018[data2018$ORG_EIN == '941156476',],data2019[data2019$ORG_EIN == '941156476',])
-                    
-
-###########
-#Review everything below
-
-
-
+#IMPORTANT Check everything below this line
+  
 # do this with a for loop (https://www.geeksforgeeks.org/for-loop-in-r/) also useful (https://www.geeksforgeeks.org/loops-in-r-for-while-repeat/)
 # You'll need to:
 # + create a list of EINs
