@@ -2246,18 +2246,18 @@ EIN <- c('521447747',
   '814396672')
 
 #Step 2.Open the databases per year
-  data2010 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2010.csv") 
-  data2011 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2011.csv") 
-  data2012 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2012.csv") 
-  data2013 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2013.csv") 
-  data2014 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2014.csv") 
-  data2015 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2015.csv") 
-  data2016 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2016.csv") 
-  data2017 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2017.csv") 
-  data2018 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2018.csv") 
-  data2019 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2019.csv") 
+  data2010 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2010.csv", header = TRUE) 
+  data2011 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2011.csv", header = TRUE) 
+  data2012 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2012.csv", header = TRUE) 
+  data2013 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2013.csv", header = TRUE) 
+  data2014 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2014.csv", header = TRUE) 
+  data2015 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2015.csv", header = TRUE) 
+  data2016 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2016.csv", header = TRUE) 
+  data2017 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2017.csv", header = TRUE) 
+  data2018 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2018.csv", header = TRUE) 
+  data2019 <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets with ratios/Data2019.csv", header = TRUE) 
 
-#Step 3.Use the loop to create the 18 databases corresponding to each organization under study
+#Step 3.Use the loop to create the 18 databases corresponding to each organization under study (with databases transposed)
 for (i in EIN) {
 #3.1)Select the elements of interest
   combinedDf <- rbind(data2010[data2010$ORG_EIN == i,],data2011[data2011$ORG_EIN == i,],data2012[data2012$ORG_EIN == i,],data2013[data2013$ORG_EIN == i,],data2014[data2014$ORG_EIN == i,],data2015[data2015$ORG_EIN == i,],data2016[data2016$ORG_EIN == i,],data2017[data2017$ORG_EIN == i,],data2018[data2018$ORG_EIN == i,],data2019[data2019$ORG_EIN == i,])
@@ -2270,6 +2270,123 @@ for (i in EIN) {
 rm(EIN, i, combinedDf, data_t, data2010, data2011, data2012, data2013, data2014, data2015, data2016, data2017, data2018, data2019)
   
 #End of the syntax for creation of databases per organization   
+
+# Step 4 BIS. Use the loop to create the 18 databases corresponding to each organization under study (with databases not transposed)
+for (i in EIN) {
+  #3.1)Select the elements of interest
+  combinedDf <- rbind(data2010[data2010$ORG_EIN == i,],data2011[data2011$ORG_EIN == i,],data2012[data2012$ORG_EIN == i,],data2013[data2013$ORG_EIN == i,],data2014[data2014$ORG_EIN == i,],data2015[data2015$ORG_EIN == i,],data2016[data2016$ORG_EIN == i,],data2017[data2017$ORG_EIN == i,],data2018[data2018$ORG_EIN == i,],data2019[data2019$ORG_EIN == i,])
+  #3.2)Write the database using a string
+  write.csv(combinedDf,(str_interp("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization/${i}.csv")))
+  # in the above line, I need to figure out how to integrate  Row names = FALSE
+  }
+
+#### Creating graphs using Ggplot2
+
+# Syntax created adter training R&S 09/15
+install.packages("ggplot2")
+library(ggplot2)
+df <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization/941156476.csv", header = TRUE) 
+ggplot(df, aes(x=TAX_YEAR, ratio2))+ geom_point()
+
+
+# Syntax 09/23 prep
+# First try to show columns
+ggplot(data = df)+
+ geom_bar(mapping = aes(x = TAX_YEAR))
+
+
+# This has three elements and does not work
+library(ggplot2)
+ggp <- ggplot(df) + 
+  geom_bar(aes(x=TAX_YEAR, y=F9_10_ASSET_TOT_EOY), stat="identity", fill="cyan",colour="#006000")+
+  geom_bar(aes(x=TAX_YEAR, y=F9_10_LIAB_TOT_EOY), stat="identity",fill="cyan",colour="#006000")
+  geom_line (aes (x=TAX_YEAR, y=ratio2),stat="identity",color="red",size=2)+
+    labs(title= "Ratio 2",
+         x="Year",y="U.S. Dollars")+
+    scale_y_continuous(sec.axis=sec_axis(~.*0.01,name="Ratio"))
+ggp 
+
+# This has two elements and WORKED
+ggp <- ggplot(df) + 
+  geom_bar(aes(x=TAX_YEAR, y=F9_10_ASSET_TOT_EOY), stat="identity", fill="cyan",colour="#006000")+
+  geom_line (aes (x=TAX_YEAR, y=ratio2),stat="identity",color="red",size=2)+
+  labs(title= "Leverage Ratio",
+       x="Year",y="U.S. Dollars")+
+  scale_y_continuous(sec.axis=sec_axis(~.*0.01,name="Ratio"))
+ggp
+
+# Resources for the above syntax: https://www.geeksforgeeks.org/combine-bar-and-line-chart-in-ggplot2-in-r/ 
+
+
+
+
+
+# Showing a line (worked)
+Ratio2 <- ggplot(df,aes(x=TAX_YEAR, y=ratio2, col = ratio2)) + 
+  geom_line()
+Ratio2  
+  
+
+# Showing two lines (Worked)
+Ratio2 <- ggplot(df,aes(x=TAX_YEAR)) + 
+  geom_line(aes(y=F9_10_ASSET_TOT_EOY), color = "darkred")+
+  geom_line(aes(y=F9_10_LIAB_TOT_EOY), color = "steelblue")
+Ratio2 
+
+
+# For line geom_line below useful resources
+#*https://statisticsglobe.com/plot-all-columns-of-data-frame-in-r
+
+#https://www.geeksforgeeks.org/combine-bar-and-line-chart-in-ggplot2-in-r/
+year <- c(2014, 2015, 2016, 2017, 2018, 2019,2020)
+course <- c(35, 30, 40, 25, 30, 35, 65)
+penroll <- c(0.3, 0.25, 0.3, 0.5, 0.4, 0.2, 0.6)
+
+# Creating Data Frame
+perf <- data.frame(year, course, penroll)
+
+# Plotting Charts and adding a secondary axis
+library(ggplot2)
+ggp <- ggplot(perf)  + 
+  geom_bar(aes(x=year, y=course),stat="identity", fill="cyan",colour="#006000")+
+  geom_line(aes(x=year, y=100*penroll),stat="identity",color="red",size=2)+
+  labs(title= "Courses vs Students Enrolled in GeeksforGeeks",
+       x="Year",y="Number of Courses Sold")+
+  scale_y_continuous(sec.axis=sec_axis(~.*0.01,name="Percentage"))
+ggp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Syntax created during training R&S 09/15 (OLD) Creating graphs using Ggplot2 (Old)
+install.packages("ggplot2")
+library(ggplot2)
+Org <- read.csv("C:/Users/tatis/Dropbox (ASU)/0000. Invest in Open Infrastructure/R project/Datasets per organization transposed/941156476.csv") 
+Org2 <- setNames(data.frame(t(Org[ , - 1])), Org[ , 1])
+
+ggplot(Org2, aes(x=row.names(Org2), y=revinvest))+geom_point()
+
+
+# provisions for saving the charts
+
+# Check these:
+# https://rc2e.com/graphics#recipe-id175
+# https://rc2e.com/graphics#recipe-id178
+
+
+
+
+#### useful links: http://r-statistics.co/ggplot2-Tutorial-With-R.html
 
 
 #IMPORTANT Check everything below this line
